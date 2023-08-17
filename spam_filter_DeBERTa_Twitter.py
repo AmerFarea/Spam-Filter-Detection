@@ -43,7 +43,8 @@ all_list = []
 for i in df["cleaned_message"]:
     all_list.append(i)
 
-
+## The max-length need to be setted to 32 with Twitter dataset, 256 with YouTube dataset
+#  and left it unsigned for SMS dataset 
 max_length = 32
 inputs = tokenizer(all_list, return_tensors="tf", padding=True, truncation=True, max_length=max_length)
 embedded_messages = model(inputs)[0].numpy()
