@@ -16,7 +16,7 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 # Reading SMS dataset
-df_sms = pd.read_csv("datasetsSMS_Spam.txt", sep='\t', names=['label', 'message'], encoding='latin-1')
+df_sms = pd.read_csv("datasets/SMS_Spam.txt", sep='\t', names=['label', 'message'], encoding='latin-1')
 df_sms['label'].replace({"ham": 0, "spam": 1}, inplace=True)
 y_sms = df_sms['label']
 dataset_name_sms = "SMS"
