@@ -57,7 +57,7 @@ This code performs text classification using different machine learning models o
 
 12. **ROC-AUC Data Storage**:
 
-- The true labels and predicted labels are saved to a file for further ROC-AUC analysis.
+- The true labels and predicted labels are saved to a file for further ROC-AUC analysis, see auc-roc.py.
 
 13. **Learning Curve Visualization**:
 
