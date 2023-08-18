@@ -66,12 +66,6 @@ def plot_histogram(df, dataset_name, column_name, title_prefix):
     fig.show()
 
 
-
-
-
-
-
-
 def find_min_max_instance_length(df, column_index):
     max_length = 0
     max_cell = None
