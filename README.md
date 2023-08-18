@@ -2,7 +2,7 @@
 
 ## spam_filter.py :
 
-This code performs text classification using different NLP and machine learning models (i.e., BART, RoBERta, and DeBERTa) on three different datasets: SMS, Twitter, and YouTube. The code also includes data preprocessing, model training, evaluation, and result visualization. Here's a detailed description of each section of the code:
+This code performs text classification using different NLP and machine learning models (i.e., `BART`, `RoBERta`, and `DeBERTa`) on three different datasets: `SMS`, `Twitter`, and `YouTube`. The code also includes data preprocessing, model training, evaluation, and result visualization. Here's a detailed description of each section of the code:
 
 1. **Importing Libraries**: The code starts by importing various Python libraries including `os`, `string`, `numpy`, `pandas`, `tensorflow`, `nltk`, `transformers`, `sklearn`, `seaborn`, and `matplotlib`. These libraries are used for data manipulation, natural language processing, machine learning, and visualization.
 
