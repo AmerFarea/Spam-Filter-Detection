@@ -35,6 +35,7 @@ def youTube_ds():
 
 # Function to clean text data
 def clean_dataset(sentence): 
+    # Takes a sentence, removes punctuation, tokenizes, removes stopwords, and returns a cleaned sentence limited to 30 words.
     stop_words = set(stopwords.words('english'))
     sentence = sentence.translate(str.maketrans('', '', string.punctuation))
     tokens = word_tokenize(sentence)
@@ -43,6 +44,7 @@ def clean_dataset(sentence):
 
 # Function to plot histograms
 def plot_histogram(df, dataset_name, column_name, title_prefix):
+    # Creates a histogram using Plotly Express based on the length of words in a specified column of a DataFrame. It customizes the layout and displays the histogram.
     word_counts = df[column_name].apply(lambda x: len(word_tokenize(x)))
 
     fig = px.histogram(
@@ -67,6 +69,7 @@ def plot_histogram(df, dataset_name, column_name, title_prefix):
 
 
 def find_min_max_instance_length(df, column_index):
+    # For a specified column in a DataFrame, this function finds the instance with the maximum and minimum lengths, along with their details. It returns a DataFrame with this information.
     max_length = 0
     max_cell = None
 
@@ -122,6 +125,7 @@ df_twitter["cleaned_message"] = df_twitter["message"].apply(clean_dataset)
 df_sms["cleaned_message"] = df_sms["message"].apply(clean_dataset)
 
 # Display results and plot histograms
+# Prints information about instance lengths before and after preprocessing for each dataset.
 print("YouTube Dataset Info. before preprocessing:")
 print(find_min_max_instance_length(df_youtube, 0))
 print("YouTube Dataset Info. after preprocessing:")
