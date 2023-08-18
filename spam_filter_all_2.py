@@ -72,6 +72,8 @@ model, tokenizer = load_model_and_tokenizer(model_name)
 
 # Embedding messages
 all_list = [clean_sentence(sentence) for sentence in dataset["message"]]
+
+## ## Adjust the max_length parameter to 32 when working with the Twitter dataset, set it to 256 for the YouTube dataset, and keep it at its default value for the SMS dataset.
 max_length = 32
 inputs = tokenizer(all_list, return_tensors="tf", padding=True, truncation=True, max_length=max_length)
 embedded_messages = model(inputs)[0].numpy()
