@@ -16,13 +16,13 @@ nltk.download('stopwords')
 nltk.download('punkt')
 
 # Reading SMS dataset
-df_sms = pd.read_csv("/content/drive/MyDrive/SMS_Spam.txt", sep='\t', names=['label', 'message'], encoding='latin-1')
+df_sms = pd.read_csv("datasetsSMS_Spam.txt", sep='\t', names=['label', 'message'], encoding='latin-1')
 df_sms['label'].replace({"ham": 0, "spam": 1}, inplace=True)
 y_sms = df_sms['label']
 dataset_name_sms = "SMS"
 
 # Reading Twitter dataset
-df_twitter = pd.read_csv("/content/drive/MyDrive//Twitter_Spam.csv")
+df_twitter = pd.read_csv("datasets/Twitter_Spam.csv")
 df_twitter.drop(["Id", "following", "followers", "actions", "is_retweet", "location"], inplace=True, axis=1)
 df_twitter["Type"].replace({"Quality": 0, "Spam": 1}, inplace=True)
 df_twitter.rename({"Type": "label", "Tweet": "message"}, axis=1, inplace=True)
@@ -30,7 +30,7 @@ y_twitter = df_twitter['label']
 dataset_name_twitter = "Twitter"
 
 # Reading YouTube dataset
-df_youtube = pd.read_csv("/content/drive/MyDrive//YouTube_Spam.csv", encoding='latin-1')
+df_youtube = pd.read_csv("datasets/YouTube_Spam.csv", encoding='latin-1')
 df_youtube.drop(["COMMENT_ID", "AUTHOR", "DATE"], inplace=True, axis=1)
 df_youtube.rename({"CLASS": "label", "CONTENT": "message"}, axis=1, inplace=True)
 y_youtube = df_youtube['label']
